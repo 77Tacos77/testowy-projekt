@@ -4,33 +4,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const nazwisko = document.getElementById('nazwisko');
     const imie = document.getElementById('imie');
     const haslo = document.getElementById('haslo');
-    const dane = [];
 
     const formularz = document.getElementById('formularz');
 
     formularz.addEventListener('submit', function (e) {
         e.preventDefault();
-        dane.push({
+        const dane = {
             email: email.value,
             nazwisko: nazwisko.value,
             imie: imie.value,
-            password: haslo.value
-        })
+            haslo: haslo.value
+        }
         console.log(dane)
-    }
-    )
 
-
-    pobieranie()
-
-    function pobieranie() {
-        fetch('apli.php')
+        fetch('apli.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams(dane)
+        })
             .then(resp => resp.json())
             .then(resp => {
                 console.log(resp);
-                document.getElementById('Flex').innerText = document.write(JSON.stringify(resp));
+                document.getElementById('Flex').innerText = console.logJSON.stringify(resp);
             })
+            .catch(error => {
+                console.error("Fetch error:", error)
+                document.getElementById('Flex').innerText = "Blad";
+            }
+            );
 
 
-    }
-})
+
+    });
+
+}
+
+);
+
