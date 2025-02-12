@@ -4,7 +4,8 @@ header('Content-Type: application/json');
 $email = $_POST['email'];
 $imie = $_POST['imie'];
 $nazwisko = $_POST['nazwisko'];
-$haslo = $_POST['haslo'];
+$haslo = str_repeat('*', strlen($_POST['haslo']));
+
 
 $users = array("email"=> $email, "imie"=> $imie, "nazwisko" => $nazwisko, "haslo" => $haslo);
 
