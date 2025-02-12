@@ -1,0 +1,8 @@
+{"email":null,"imie":null,"nazwisko":null,"haslo":null}
+{"email":null,"imie":null,"nazwisko":null,"haslo":null}
+{"email":null,"imie":null,"nazwisko":null,"haslo":null}
+{"email":"dsada","imie":"dsadasd","nazwisko":"adafsdgs","haslo":"sdgdfgdfg"}
+{"email":"dsada","imie":"dsadasd","nazwisko":"adafsdgs","haslo":"sdgdfgdfg"}
+{"email":"dsada","imie":"dsadasd","nazwisko":"adafsdgs","haslo":"sdgdfgdfg"}
+{"email":"","imie":"","nazwisko":"","haslo":""}
+{"email":"","imie":"","nazwisko":"","haslo":""}
