@@ -27,11 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(resp => resp.json())
             .then(resp => {
                 console.log(resp);
-                document.getElementById('Flex').innerText = console.logJSON.stringify(resp);
             })
             .catch(error => {
                 console.error("Fetch error:", error)
-                document.getElementById('Flex').innerText = "Blad";
             }
             );
 
