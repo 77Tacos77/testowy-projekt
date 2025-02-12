@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
             imie: imie.value,
             haslo: haslo.value
         }
-        console.log(dane)
 
         fetch('apli.php', {
             method: 'POST',
@@ -26,10 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(resp => resp.json())
             .then(resp => {
+                if(resp.error){
+                    document.getElementById('unique').innerText = "email juz istnieje"
+                    return false;
+                }
                 console.log(resp);
+                document.getElementById('unique').innerText = ""
+                return true;
             })
-            .catch(error => {
-                console.error("Fetch error:", error)
+            
             }
             );
 
@@ -37,7 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-}
-
-);
 
